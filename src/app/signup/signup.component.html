@@ -1,0 +1,16 @@
+<div>
+    <h1>Sign Up</h1>
+    <form #userRef="ngForm" (ngSubmit)="registerUser(userRef.value)">
+        <label>First Name</label>
+        <input type="text" name="fName" ngModel/> <br/>
+        <label>Last Name</label>
+        <input type="text" name="lName" ngModel/> <br/>
+        <label>UserName</label>
+        <input type="text" name="user" ngModel/> <br/>
+        <label>Password</label>
+        <input type="password" name="pass" ngModel/> <br/>
+        <input type="submit" value="Register"/>
+        <input type="reset" value="Reset"/>
+    </form>
+    <br />
+</div>
