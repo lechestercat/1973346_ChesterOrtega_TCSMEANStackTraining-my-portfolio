@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  msg:string="";
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
   }
@@ -20,11 +22,11 @@ export class LoginComponent implements OnInit {
     let pass1 = loginRef.pass;
 
     if(userInf.user == user1 && userInf.pass == pass1){
-      console.log("LOGGED IN");
+      this.msg = "Logged In!"
       sessionStorage.setItem("token","123");
-      //this.router.navigate(["portfolio"]);
+      this.router.navigate(["portfolio"]);
     }else{
-      console.log("TRY AGAIN")
+      this.msg = "Try Again!"
     }
 
   }

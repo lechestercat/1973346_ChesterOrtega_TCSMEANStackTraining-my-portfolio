@@ -1,1 +1,26 @@
-<p>portfolio works!</p>
+<div>
+    <h2>Welcome {{user}}</h2>
+
+    <form #userRef="ngForm" (ngSubmit)="addContact(userRef.value); userRef.reset()">
+        <label>Contact Name</label>
+        <input type="text" name="contactName" ngModel/> <br/>
+        <label>Contact Phone</label>
+        <input type="text" name="contactPh" ngModel/> <br/>
+        <input type="submit" value="save"/>
+    </form>
+    <br/>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Phone No</th>
+        </tr>
+        <tr *ngFor="let con of contacts">
+            <td>{{con.contactName}}</td>
+            <td>{{con.contactPh}}</td>
+        </tr>
+    </table>
+
+    <br/>
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
